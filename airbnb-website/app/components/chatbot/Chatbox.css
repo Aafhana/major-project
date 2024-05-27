@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+  background: #F1F1F1;
+}
+
+*, html {
+  --primaryGradient: linear-gradient(93.12deg, #581B98 0.52%, #9C1DE7 100%);
+  --secondaryGradient: linear-gradient(268.91deg, #581B98 -2.14%, #9C1DE7 99.69%);
+  --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+  --primary: #581B98;
+}
+
+/* CHATBOX */
+.chatbox {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.container {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 100;
+  background-color: white;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.chatbox__support {
+  display: none;
+  flex-direction: column;
+  background: #f9f9f9;
+  width: 350px;
+  height: 400px;
+  z-index: 1000;
+  box-shadow: var(--primaryBoxShadow);
+  border-radius: 1.25rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.chatbox--active .chatbox__support {
+  display: flex;
+  opacity: 1;
+}
+
+.chatbox__button {
+  position: relative;
+  z-index: 10;
+}
+
+#male {
+  height: 3.75rem;
+  width: 4.0625rem;
+}
+
+#mic {
+  height: 1.25rem;
+  width: 1.25rem;
+  padding-left: 0.0625rem;
+}
+
+.chatbox__button button {
+  padding: 0.625rem;
+  background: white;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  box-shadow: var(--primaryBoxShadow);
+  cursor: pointer;
+}
+
+.chatbox__button img {
+  width: 1.875rem;
+  height: 1.875rem;
+}
+
+.chatbox__header {
+  background: var(--primaryGradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9375rem 1.25rem;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  box-shadow: var(--primaryBoxShadow);
+}
+
+.chatbox__image--header {
+  margin-right: 0.625rem;
+}
+
+.chatbox__heading--header {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.chatbox__description--header {
+  font-size: 0.9rem;
+  color: white;
+}
+
+.chatbox__messages {
+  flex: 1;
+  padding: 0 1.25rem;
+  margin-top: auto;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column-reverse;
+}
+
+.messages__item {
+  margin-top: 0.625rem;
+  padding: 0.5rem 0.75rem;
+  max-width: 70%;
+  background: #E0E0E0;
+}
+
+.messages__item--visitor,
+.messages__item--typing {
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+}
+
+.messages__item--operator {
+  margin-left: auto;
+  background: var(--primary);
+  color: white;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  border-bottom-left-radius: 1.25rem;
+}
+
+.chatbox__footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem;
+  background: var(--secondaryGradient);
+  box-shadow: var(--secondaryBoxShadow);
+  border-bottom-right-radius: 0.625rem;
+  border-bottom-left-radius: 0.625rem;
+}
+
+.chatbox__footer input {
+  width: 80%;
+  border: none;
+  padding: 0.625rem;
+  border-radius: 1.875rem;
+  text-align: left;
+}
+
+.chatbox__send--footer {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+}
+
+.send__button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .chatbox {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .chatbox__support {
+    width: 90vw;
+    height: 70vh;
+    border-radius: 0.625rem;
+  }
+
+  .chatbox__header {
+    padding: 0.625rem 0.9375rem;
+  }
+
+  .chatbox__footer {
+    padding: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbox__support {
+    width: 95vw;
+    height: 80vh;
+    border-radius: 0.5rem;
+  }
+
+  .chatbox__header {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .chatbox__footer {
+    padding: 0.75rem;
+  }
+
+  .chatbox__button button {
+    padding: 0.5rem;
+  }
+
+  .chatbox__button img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
