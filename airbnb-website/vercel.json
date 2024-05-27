@@ -2,8 +2,11 @@
     "build": {
       "env": {
         "NODE_ENV": "production"
-      },
-      "npm": true
+      }
+     
+    
+    
     }
+    
   }
   
