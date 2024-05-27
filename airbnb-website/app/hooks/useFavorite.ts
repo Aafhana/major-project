@@ -12,6 +12,7 @@ interface IUseFavorite {
   currentUser?: SafeUser | null
 }
 
+
 const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
   const router = useRouter();
 
