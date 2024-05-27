@@ -1,20 +1,20 @@
-'use client';
+// 'use client';
 
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+// import Image from "next/image";
+// import { useRouter } from "next/navigation";
 
-const icon = () => {
-  const router = useRouter();
+// const icon = () => {
+//   const router = useRouter();
 
-  return ( 
-    <Image
+//   return ( 
+//     <Image
       
      
-      src="/images/chatbox-icon.svg" 
+//       src="/images/chatbox-icon.svg" 
      
-      alt="Logo" 
-    />
-   );
-}
+//       alt="Logo" 
+//     />
+//    );
+// }
  
-export default icon;
+// export default icon;
